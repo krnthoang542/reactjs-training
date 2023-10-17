@@ -47,3 +47,16 @@
   color: #f1356d;
   margin-bottom: 8px;
 }
+.blog-preview a{
+  text-decoration: none;
+}
+
+/* blog details page */
+.blog-detail h2 {
+  font-size: 20px;
+  color: #f1356d;
+  margin-bottom: 10px;
+}
+.blog-detail div {
+  margin: 20px 0;
+}
