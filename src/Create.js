@@ -1,10 +1,13 @@
 import { useState } from "react";
+import { Navigate, redirect } from "react-router-dom";
+
 
 const Create = () => {
   const [title, setTitle] = useState("");
   const [body, setBody] = useState("");
   const [author, setAuthor] = useState("mario");
-  const [isPending, setIsPending] = useState(false)
+  const [isPending, setIsPending] = useState(false);
+  const [isRedirect, setIsRedirect] = useState(false);
 
   const handleSubmit = (e)=>{
     e.preventDefault();
@@ -17,6 +20,7 @@ const Create = () => {
     }).then(()=>{
         console.log("Added new blog")
         setIsPending(false)
+        setIsRedirect(true)
     })
   }
   return (
@@ -46,6 +50,7 @@ const Create = () => {
         </select>
         {!isPending && <button>Add blog</button>}
         {isPending && <button disabled>Adding blog ...</button>}
+        {isRedirect && <Navigate to="/"/>}
       </form>
     </div>
   );
